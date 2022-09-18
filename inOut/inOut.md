@@ -1,0 +1,83 @@
+# RESUMO
+
+## ES-Arquitetura e Organização de Computadores.pdf
+
+- Dispositivos de entrada e dispositivos de saída.
+  - Mouse
+  - Teclado
+  - touchscreen...
+- Tipos de barramentos.
+  - PRINCIPAIS:
+    - Barramento de endereço
+      - Por ele que o processador pega o endereço da meméria, aonde está contido os dados.
+    - Barramento de dados
+      - É por esse barramento que os dados processados retornam à memória.
+      - **"DE ACORDO COM A FIGURA 2.11, ESSE BARRAMENTO DE DADOS É OU NAO UNIDIRECIONAL?"**
+      - > A figura 2.11 do Souza Filho (2014), mostra que o barramento de dados é de uma única via, saindo os dados do processador e indo para a memória. Mas por não fazer sentido (como os dados trafegam da memória até o processador?) pesquisei na internet, e realmente o barramento de dados é de ida e vinda.
+    - Barramento de controle
+      - Nesse pdf, não temos muitas informações sobre o barramento de controle, sabe-se que ele é interligado a todos os periféricos de entrada/saída, memória e processador.
+      - > Mas pesquisando na internet, através de um vídeo explicativo no youtube, sei que: esse barramento faz a sincronização da CPU em geral com os periféricos de entrada e saída (memória, hd, entrada do teclado...) e os controla. Ou seja, como os dados (que trafegam pelo barramento de dados) sabem qual endereço (que trafaga pelo barramento de endereço) é o seu referente? Pelo barramento de controle que os sincronizam.
+      - >Referência: https://www.youtube.com/watch?v=fiEF4W_KbLw&ab_channel=Dicion%C3%A1riodeInform%C3%A1tica
+      - >**PELO QUE ME PARECE, ESSE BARRAMENTO É COMO SE FOSSE A ENERGIZAÇÃO DA PLACA E PERIFÉRICOS. A FORMA DE ENTRADA/CONECTAR**
+
+- OUTROS BARRAMENTOS ESSENCIAIS:
+  - Barramento local
+    - Esse barramento funciona na mesma velocidade do clock do processador.
+    - Como é bem rápida, então serve para conectar a RAM **direto** e com maior velocidade.
+  - Barramento de sistema
+    - Como se fosse uma melhoria do barramento local, mas **não** *conecta direto* a RAM (Memoria principal);
+    - Conectar à cache primeiro, então temos os chipset pra conectar à RAM (pincipal)
+      - Chipset: (ponte) entre os barramentos. (sincroniza velocidade dos barramentos).
+    - É adotado por alguns fabricantes (de acordo com o autor do pdf).
+      - > Existem dois na placa-mãe, a north-brigde e a south-brigde. A north, conecta aos In/Out mais rápidos, enquanto a south aos mais lentos.
+  - Barramento de expanção
+    - O barramento de Entrada e saída.
+    - > "Esse barramento que faz as conexões com as entradas/saídas dos dispositivos mais externos e lentos, como USB, HD (que é mais lento considerado ao processador e memória) dipositivos de rede...".
+    - **PESQUISAR: GPU E VIDEO.**
+  - BARRAMENTOS MAIS CONHECIDOS
+    - ISA (Industry Standard Adapter)
+      - Feito pela IBM
+      - Um dos primeiros, para os primeiros PCs.
+      - **Não é mais ultilizado!**
+    - PCI (Peripheral Component Interconnect)
+      - Feita pela Intel;
+      - se tornou quase que um padrão;
+      - 33 a 66 MHz, seu clock para 32 ou 64 bits;
+      - **Subistituida pelo PCIe!**
+    - AGP (Accelerated Graphics Port)
+      - Feita pela Intel e outras empresas (Liderada pela intel)
+      - Voltado para melhorar as placas de video;
+      - **Substituida pelo PCIe!**
+    - PCI Express (Peripheral Component Interconnect Express)
+      - Grupo de empresas: PCI-SIG (Special Interest Group)
+        - Intel, AMD, Microsoft, IBM, HP;
+      - 2004 Inicio do lançamento, PCIe 1.0
+      - 2007 PCIe 2.0;
+      - ...
+      - 2022 PCIe 6.0;
+      - Previsão 2025 do PCIe 7.0
+    - USB (Universal Serial Bus)
+      - Por um unico conector (porta) permite muitor conectores
+        - exemplo: um hub
+      - plug and play
+  - ENTRADA PROGRAMADA
+    - **Não é mais ultilizado!**
+    - CPU verifíca se cada dispositovo necessita atendimento, continuamente.
+  - ENTRADA E SAIDA CONTROLADA POR INTERRUPÇÕES
+    - **Não é mais ultilizado!**
+    - Não fica presa esperando o dispositivo ficar pronto para transferir dados.
+  - ACESSO DIRETO À MEMÓRIA (DMA - Direct Memory Access)
+    - Um controlador de Entrada e saída, *DMA controller*
+  - CONTROLADOR
+    - Controla as entradas e saídas;
+    - Tem seu CPU e memória integradas
+    - CPU
+      - Um núcleo, mais simples para fazer uma coisa só;
+    - Memória
+      - Memória, para guardar as instruções de entradas e saídas
+    - I/O
+      - E os periféricos de entrada e saída que comunicam ao barramento...
+    - > Referência: https://blog.multcomercial.com.br/microcontrolador-saiba-o-que-e-e-como-usar/
+    - > Sim! Usando alguns equipamentos posse ter acesso direto ao controlador e mudar sua programação, que é em C e ultiliza a bibliotéca "<mbed.h>". Existe diversos tipos de equipamentos, quando pesquisei na internet, desde uns parecidos com um pendrive e outros como placas iguais arduinos, que conectam no USB do PC e a outra ponta nas entradas especificadas do microcontrolador (que pode ser a de energização; GND, que é o terra e outros de dados de instrução).
+    - > O PLC contém um microcontrolador embutido, então usando a lógica, a plataforma do PCL só torna mais acessível às entradas e saídas desse microcontrolador; e o fácil acesso do PLC no computador, assim permitindo facilmente ser acessível para ser programado.
+    Uma Observação: Um PLC é muito caro, mas se comprar uma placa (para acessar o microcontrolador), microcontrolador, protoboard (para fazer as ligações mais organizadas e segura), e outros acessóriozinhos, sai literalmente mais barato.

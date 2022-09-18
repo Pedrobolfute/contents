@@ -1,0 +1,39 @@
+Visão geral da estrutura de diretórios
+
+Navegação de diretórios
+Comandos: ls, pwd, cd
+
+Caminho absoluto e relativo
+
+Limpar o terminal
+Ctrl + L, clear
+
+Copiar arquivo
+cp
+
+Mover ou renomear arquivo
+mv
+
+Criar pasta
+mkdir
+
+Apagar diretório vazio e não vazio
+rmdir/ rm -r
+
+
+Compilar um programa em C
+Ver atividade 2
+
+Criação de arquivo
+gedit, touch
+
+Ler arquivo no terminal
+cat
+
+Uso de expressões regulares
+*,?
+
+help, man, apropos
+
+Permissão de arquivo
+chmod
